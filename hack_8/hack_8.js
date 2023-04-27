@@ -8,8 +8,11 @@ const fetch = require('cross-fetch');
 */
 
 async function fnTest() {
-  //...
-  return
+  const url= 'https://jsonplaceholder.typicode.com/posts'
+  let llamado = await fetch(url,{method:"GET"})
+  let response = await llamado.json()
+  
+  return response.length
 }
 
 module.exports = fnTest;
